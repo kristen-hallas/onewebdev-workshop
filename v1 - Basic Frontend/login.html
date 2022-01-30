@@ -20,16 +20,15 @@
             ... CSS
         }
     -->
+     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-
-
+   
 
 </head>
 <body>
 
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div -->
-
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="./index.html">
@@ -95,61 +94,62 @@
         </div>
     </nav>
 
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <p class="title">
-                Dashboard
-            </p>
-            <p class="subtitle">
-                Hello, <span id="f-name-span"></span> <span id="l-name-span"></span>! 
-            </p>
-        </div>
-    </section>
+    <div>
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <p class="title">
+                    Welcome back,
+                </p>
+                <p class="subtitle">
+                    it's time to make your rainy day fund a little greener.
+                </p>
+            </div>
+        </section>
 
-    <p class="mt-4">
-    </p>
-
-    <div class="container">
-        <div class="box">
-            <p class="title">
-                Today's goal
-                <hr />
-            </p>
-            <p class="subtitle">   <span id="goal-span"></span> </p>
-            <p class="subtitle"> You are <span id="goal-score-span"></span>% closer to completing your financial goal! </p>
-        </div>
-
-        <progress class="progress is-primary" value="25" max="100"> <span id="goal-score-span"></span> </progress>
-
-
-        <p class="title">
-            Balances
+        <p class="mt-4">
         </p>
+        <div class="container">
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Account</label>
+                </div>
+                <div class="field-body">
+
+                    <div class="field">
+                        <p class="control is-expanded">
+                            <input class="input" type="email" placeholder="Email">
+
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="control is-expanded ">
+                            <input class="input" type="text" placeholder="Password">
+
+                        </p>
+                    </div>
+
+                </div>
+            </div>
 
 
-        <table class="table is-bordered is-hoverable is-fullwidth">
-            <thead>
-                <tr>
-                    <th><abbr title="The money you have allocated towards emergencies.">Emergency Fund</abbr></th>
-                    <th><abbr title="The total dollar amount in retirement accounts.">Retirement</abbr></th>
-                    <th><abbr title="The total dollar amount in your traditional IRA.">Traditional IRA</abbr></th>
-                    <th><abbr title="The total dollar amount in your Roth IRA.">Roth IRA</abbr></th>
-                    <th><abbr title="The total dollar amount in your stock portfolio.">Stock Portfolio</abbr></th>
-                    <th><abbr title="The total dollar amount in your savings account.">Savings</abbr></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td> <span id="emer-fund-span"></span> </td>
-                    <td> <span id="retirement-span"></span> </td>
-                    <td> <span id="trad-ira-span"></span> </td>
-                    <td> <span id="roth-ira-span"></span> </td>
-                    <td> <span id="stock-prof-span"></span> </td>
-                    <td> <span id="savings-span"></span> </td>
-                </tr>
-            </tbody>
-        </table>
 
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <!-- Left empty for spacing -->
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <a button class="button is-primary" href="./index.html">
+                                Show me the money!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
     <p class="mb-4">
     </p>
@@ -200,6 +200,7 @@
         var stock_prof_span = document.getElementById("stock-prof-span")
         var savings_span = document.getElementById("savings-span")
         var goal_score_span = document.getElementById("goal-score-span")
+        var goal_score_prog_num = document.getElementById("goal_score_prog")
         var recent1_span = document.getElementById("recent1-span")
         var recent2_span = document.getElementById("recent2-span")
         var recent3_span = document.getElementById("recent3-span")
@@ -215,8 +216,13 @@
         roth_ira_span.textContent = user['roth_ira']
         stock_prof_span.textContent = user['stock_prof']
         savings_span.textContent = user['savings']
-        goal_score_span.textContent = user['goal_score']
-
+        goal_score_span.textContent = users['goal_score']
+        goal_score_prog.setAttribute("value", users['goal_score'])
+        recent1_span.textContent = user['recent1']
+        recent2_span.textContent = user['recent2']
+        recent3_span.textContent = user['recent3']
+        recent4_span.textContent = user['recent4']
+        recent5_span.textContent = user['recent5']
     </script>
 </body>
 </html>
